@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de Análise por Posição - TIMEMANIA">
+    <meta name="keywords" content="timemania, loteria, análise, palpites, estatísticas">
+    <title>{% block title %}Sistema de Análise - TIMEMANIA{% endblock %}</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="https://i.postimg.cc/W4g9ShFc/timemania.png" alt="Timemania Logo" class="logo">
+            <h1>Sistema de Análise por Posição</h1>
+            <p>TIMEMANIA - Loteria da Caixa Econômica Federal</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="{{ url_for('main.index') }}">Início</a></li>
+                <li><a href="{{ url_for('main.palpites') }}">Gerar Palpites</a></li>
+                <li><a href="#" id="btn-atualizar">Atualizar Dados</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistema de Análise da Timemania</p>
+            <p>Desenvolvido para análise estatística e geração de palpites</p>
+            <p><strong>Atenção:</strong> Este sistema não garante premiação. Jogue com responsabilidade.</p>
+            <p>Loteria TIMEMANIA - <a href="http://www.caixa.gov.br" target="_blank">Caixa Econômica Federal</a></p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Início - Sistema de Análise TIMEMANIA{% endblock %}
+
+{% block content %}
+<div class="text-center mb-3">
+    <h1>Bem-vindo ao Sistema de Análise da TIMEMANIA</h1>
+    <p>Análise estatística completa e geração inteligente de palpites</p>
+</div>
+
+<!-- Último Resultado -->
+<section id="ultimo-resultado">
+    <div class="loading">Carregando último resultado</div>
+</section>
+
+<!-- Estatísticas -->
+<section id="estatisticas-gerais">
+    <div class="loading">Carregando estatísticas</div>
+</section>
+
+<!-- Informações sobre a Timemania -->
+<div class="card">
+    <h2>Sobre a TIMEMANIA</h2>
+    <div class="cards-grid">
+        <div class="stat-item">
+            <span class="stat-number">7</span>
+            <span class="stat-label">Números Sorteados</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">80</span>
+            <span class="stat-label">Números Disponíveis</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">10-15</span>
+            <span class="stat-label">Números por Jogo</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">80</span>
+            <span class="stat-label">Times Cadastrados</span>
+        </div>
+    </div>
+    
+    <h3 class="mt-3">Faixas de Premiação</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Faixa</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1ª</td>
+                <td>7 acertos</td>
+            </tr>
+            <tr>
+                <td>2ª</td>
+                <td>6 acertos</td>
+            </tr>
+            <tr>
+                <td>3ª</td>
+                <td>5 acertos</td>
+            </tr>
+            <tr>
+                <td>4ª</td>
+                <td>4 acertos</td>
+            </tr>
+            <tr>
+                <td>5ª</td>
+                <td>3 acertos</td>
+            </tr>
+            <tr>
+                <td>6ª</td>
+                <td>Time do Coração (independente dos acertos)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Estratégias Disponíveis -->
+<div class="card">
+    <h2>Estratégias de Palpites Disponíveis</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Estratégia</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Equilibrada</strong></td>
+                <td>Mix de números frequentes (50%) e atrasados (50%)</td>
+            </tr>
+            <tr>
+                <td><strong>Agressiva</strong></td>
+                <td>Prioriza números mais frequentes (80%)</td>
+            </tr>
+            <tr>
+                <td><strong>Conservadora</strong></td>
+                <td>Prioriza números atrasados (80%)</td>
+            </tr>
+            <tr>
+                <td><strong>Mista</strong></td>
+                <td>Combina múltiplas abordagens (40% frequentes, 40% atrasados, 20% aleatórios)</td>
+            </tr>
+            <tr>
+                <td><strong>Atrasados</strong></td>
+                <td>Foca apenas em números com maior atraso</td>
+            </tr>
+            <tr>
+                <td><strong>Por Faixa</strong></td>
+                <td>Distribui números uniformemente por faixas de dezenas</td>
+            </tr>
+            <tr>
+                <td><strong>Por Posição</strong></td>
+                <td>Usa análise posicional do sorteio (1ª a 7ª posição)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="text-center mt-3">
+        <a href="{{ url_for('main.palpites') }}" class="btn btn-primary">Gerar Palpites Agora</a>
+    </div>
+</div>
+{% endblock %}
